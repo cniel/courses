@@ -1,3 +1,4 @@
+26/09
 /*
 avantage du C++ : c'est compatible avec le C, on peut donc encapsuler des fonctions de programmes pré-existant en C, et "améliorer ces programmes" avec les pptés du C++
 
@@ -112,27 +113,109 @@ b.y = a.y;
 /*
 Cependant, ça pose un pbm car x est privé donc on ne peut pas y accéder à l'extérieur de la classe point.
 2 solutions suivant le contexte :
-- mettre cette affectation dans la classe Point.
-- rendre publique la variable x.
+	- mettre cette affectation dans la classe Point.
+	- rendre publique la variable x.
 */
 
 /*
 Notion de constructeur:
-C'est une méthode qui sert à initialiser un objet.
-Appelée automatiquement à chaque création de l'objet.
+	C'est une méthode qui sert à initialiser un objet.
+	Appelée automatiquement à chaque création de l'objet.
 
-Écrire son propre constructeur pour une prog propre.
+	Écrire son propre constructeur pour une prog propre.
 
-instancier la classe Point : 
-réserver l'espace mémoire pour cet objet (pr ts les attributs...)
-Des valeurs par défaut sont également attribuées. C'est le role du constructeur.
-
-Il porte le mm nom que la classe
+	instancier la classe Point : 
+	réserver l'espace mémoire pour cet objet (pr ts les attributs...)
+	Des valeurs par défaut sont également attribuées. C'est le role du constructeur.
+	
+	Il porte le mm nom que la classe
 
 Destructeur:
-Garbage collector. Rendre l'espace propre une fois qu'on ne se sert plus de l'objet.
-
-Le mm nom que la classe, précédé de ~.
+	Garbage collector. Rendre l'espace propre une fois qu'on ne se sert plus de l'objet.
+	Le mm nom que la classe, précédé de ~.
 
 Grâce à la surcharge, une classe peut avoir autant de constructeurs qu'on le souhaite.
 */
+
+/*
+Variable de classe : 
+	commune à l'ensemble des intances de cette classe.
+	Elles sont déclarées de la façon suivante :
+*/
+class nomClasse{
+	static int n;  //variable de classe
+	float x; //variable d'instance
+	...
+};
+
+/* Initialisation de var. de classe :
+	- ne se fait aps dans un constructeur.
+	- se fait en dehors de toute méthode.
+	- La modif de sa valeur s'applique à toutes les instances de cette classe.
+*/
+
+//Exemple avec la classe pile (~25min)
+
+/*Rapport avec l'entreprise : séparation en 2 fichiers : 
+	- la Classe, les prototypes de ses méthodes et les attributs: c'est le fichier Spec. 
+	  Très utile dans le rapport avec l'entreprise (en termes de délai et de coût).
+	
+	- le corps des méthodes. C'est le 'Code'.
+*/
+
+
+// LES PROPRIÉTÉS DES FONCTIONS MEMBRES
+
+/*Surdéfinition
+	Différentes méthodes, avec un meme nom mais des arguments différents (i.e. surcharge)
+	exemple en diapos 96-97 : c'est pas de l'appel récursif, c'est juste un appel à une autre fonction portant le mm nom (mais ayant des param différents).
+
+	- Rédéfinition d'une même méthode: on garde le mm nom, les mm arguments, mais on change le corps.
+	- Surdéfinition : on garde le mm nom, mais on change les arguments et le corps.
+*/
+
+/*Fonctions membres en ligne:
+	- svt utilisé pour les accesseurs, modifiers, constructeurs, destructeurs : c'est qqchose qui fait qd meme partie de la spec quand on y pense.
+	- utiliser le mot clé inline si on la met dans le mm fichier Spec, mais après la classe. Sinon on peut aussi la mettre dans la classe. (voir exemples diapos 101 et 102).
+*/
+
+
+/*Exercice: 
+	Définir une classe Fenêtre (au sens informatique), pr qu'on puisse manipuler celle-ci.
+*/
+
+//###########  Fenetre.h #############
+class Fenetre
+{
+	private:
+		int x;
+		int y;
+		int largeur;
+		int hauteur;		
+		
+		static int nbInstances;
+		
+	public:
+		//Constructors
+		Fenetre();
+		Fenetre(int px, int py);
+		
+		//Getters		
+		float getLargeur();
+		float getHauteur();
+		float getnbPouces();
+		
+		//Setters
+		void setLargeur(float pLargeur);
+		void setHauteur(float pHauteur);
+		void setnbPouces(float pnbPouces);
+};
+
+//Constructors
+inline Fenetre::Fenetre() { x = 10; y = 10; largeur = 600; hauteur = 300; }
+inline Fenetre::Fenetre(int px, int py) { x = px; y = py; largeur = 600; hauteur = 300; }
+
+//Getters
+inline Fenetre::getLargeur() { cout }
+
+
