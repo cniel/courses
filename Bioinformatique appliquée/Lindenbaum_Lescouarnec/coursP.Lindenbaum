@@ -1,0 +1,146 @@
+NCBI : il y a d'autres bases comme celle-ci mais celle ci est très bien installée (c'est une des plus vieilles).
+
+Entrez Programming Utilities Help
+
+formats de fichiers utilisés au NCBI ? quelles structures sont renvoyées?
+comment interroger le ncbi ? comment get les données?
+
+-> données renvoyées sous format XML.
+
+générer un parser Java pour voir les dbSNP.
+
+http : quasi toutes les requetes passent par ce protocole.
+Envoi d'info depuis un client vers un serveur : le message respecte un protocole : http.
+Un en-tete dit où on veut aller (l'URL), et sous l'entete, un message avec des infos sur le contenu de la page.
+
+Méthode pour envoyer de infos :
+	-méthode get : ts les paramètres   de la connexion sont dans l'entete. (utilisé la plupart du tps)
+	-méthode post : Qd on upload une image p.ex, ça passe dans le body directement : util pour les gros messages.
+	
+XML:
+format structuré qu'on peut manipuler.
+balises.
+Un en-tête, puis chaque élement contient d'autres éléments, et certains élements contiennent du texte.
+DTD : schema pour les documents XML du NCBI. Mettre un lien vers le dtd dans l'en-tête.
+
+XML input + XSLT code -> XSLT processor -> XML ou HTML ou TXT
+
+LES FORMATS:
+	- format de séquence : format genBank (texte) : une représentation
+	- ASN1 : ça existait avant le XLM : format structuré. Ds chaque doc ASN1, on lui asocie un schema : descritpion de comment les données vont être structurées.
+-> A quoi ça sert ? DATATOOL : un outil du ncbi pour les flemmards : il regade le schema ASN1, et il génère tout le code C++ de lire le fichier ASN1. Donne le code pour exporter les données en ASN1 ou en XML ou en JSON.
+
+E-Utilities:
+GI : global identifier : numéro unique qui va représenter un objet dans toute la base du NCBI.
+
+einfo : liste ts les noms de BD dispos sur NCBI
+curl -s "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi" | grep "DBName" | wc -l
+
+curl "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed"
+-> infos sur puibmed.
+
+FieldList : liste des fields (avec ts les sous-champs) : 1 field pour 1 article.
+
+Récupérer le lien Pubmed vers Gene, ou l'identifiant de l'organisme.
+
+CQuery : on a un mot : on veut savoir quelles bases de données traitent de ce mot.
+curl "http://eutils.ncbi.nlm.nih.gov/gquery?term=tyrannosaurus%20rex"
+- quelles bases de données parlent de T.Rex? (on a échappé l'espace).
+ça nous donne des infos en html.
+Si on rajoute &retmode=xml   ça nous donne du xml.
+
+ESearch : 
+permet de faire une requete dans une seule BD.
+on lui donne des mots-clés : ça renvoie non pas les documents qu'on lui demande, et renvoie les identifiants uniques de ces documents, en nombre limité.
+
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nucleotide&term=%22Mammuthus%20primigenius%22 | xmllint --format -
+
+xmllint --format - :
+xmllint : vérifie la structure du XML.
+--format : indente bien le XML
+- : l'input est la sortie standard du curl
+
+le count dit cb il y a d'articles sur les mamouth.
+le retmax dit qu'il ne nous donne les identifiants que des 20 premier (avec retmax=20). On peut changer ce RetMax et le mettre dans la ligne de commande. (le max est 10 000 apparemment).
+On peut aussi dire a partir de quel article on veut qu'il renvoie : restart:
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nucleotide&term=%22Mammuthus%20primigenius%22&retmax=30&retstart=100" | xmllint --format -
+
+On peut aussi faire rettype=count : renvoie juste le nombre d'articles dispos, sans les identifiants.
+
+Esummary:
+rapide aperçu des articles.
+également possible de faire un esummary d'une autre db :
+curl "http://www.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=snp&id=25"
+
+Efetch:
+partie la plus importante: on récupère vraiment le document en entier: marche un peu comme esummary, sauf qu'on récupère l'intégralité de la page.
+
+L'ordre des paramètres n'a pas d'importance (on peut mettre un retmode avant ou apres un rettype).
+
+On est pas obligé d'avoir un gi pour accéder à la séquence, si on a l'accession number, ça suffit.
+
+WebEnv : quand on utilise un Esearch : il retient ce qu'on a recherché (en cache), il nous donne une clé, et on peut y ré-accéder par la suite de manière très rapide. ...esearch.fcgi?usehistory=y&...
+Ça donne une balise WebEnv qui contient l'identifiant, elle est au début de la feuille XML. Et aussi un QueryKey : la clé de notre requête.
+
+db=taxonomy&term=extinct[PROP]  //on recherche une espèce éteinte.
+
+http://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&query_key=<clé>&WebEnv=<identifiant>&retmode=xml -> donne la liste des espèces disparues (nécessite qu'on ait fait un efetch avec history avant).
+
+EPost:
+poster au ncbi une série d'identifiants, il les stocke. et après on peut lui dire d'utiliser cette liste pour les requetes suivantes.
+
+Comment se servir des identifiants envoyés ?
+on a envoyé une liste de ts les identifiants des organismes éteints.
+Avec uniquement cette liste, définit=e dans un WebEnv, on peut chercher si Homo sapiens est dans cette liste : <Count>0</Count>.
+Si on cherche T.Rex, il est trouve 1 -> c'est carément une réponse booléenne (trouvé ou non).
+
+ELink :
+requete inter-base de données
+
+svg : format d'image décrit en XML. (format vectoriel)
+xsltproc <(curl  "https://raw.github.com/lindenb/xslt-sandbox/master/stylesheets/bio/ncbi/gb2svg.xsl") "http://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=14971102&retmode=xml&rettype=gbc" 
+
+le curl récupère une feuille de style qu'on processe avec xsltproc : on télécharge un format gbc -> gb2svg.xsl : retourne un format svg : description d'image. (en redirigeant ça dans un document, on peut ouvrir l'image).
+
+on va faire un graphique en R avec le nb d'articles qui parlent de T.Rex par année.
+
+curl -s "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=Tyrannosaurus&usehistory=true" | xmllint --format -
+
+curl -s "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&usehistory=true&WebEnv=NCID_1_52434791_130.14.22.215_9001_1375957034_1619786167&query_key=1&retmode=xml"
+
+on transforme XML en R (grace à la feuille xsl dispo sur github/lindenb/)
+on passe ça dans R -> génération d'un graph.
+
+SCHEMA de la base dbSNP.
+générer du code java pour analyser le resultat de dbSNP
+
+xjc : xml java compiler : analyse le schema et génère le code qu'il faut pour analyser les documents récupérés de ncbi. 
+-> C'est du code java pour lire du xml
+format de schema : .xsd : c'est absoluement pas spécifique de ncbi.
+
+xjc -d . "ftp://ftp.ncbi.nlm.nih.gov/snp/specs/docsum_3.3.xsd"
+
+Dans tous les dossiers générés -> trouver le ParseDbSnp.java -> le copier dans le répertoire de travail où on a le .xsd
+
+Une fois qu'on a compilé le programme et qu'il est executable, on peut l'utiliser pour afficher toutes les variations qui ne sont pas de type génomique.
+
+
+javac ParseDbSnp.java gov/nih/nlm/ncbi/snp/docsum/*.java
+curl -s "ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606/XML/ds_ch1.xml.gz" | gunzip -c|java ParseDbSnp
+Ts les SNP identifiés (les rs) dans le chromosome 1 : récupérés sur ncbi, on dézippe le tout, et on le parse avec java ParseDbSnp -> donne ts les rs sur la sortie standard -> tout ça sans avoir eu besoin de lire le XML ou de créer un parser.
+Et si jamais NCBI change le schema, il y a juste à regénérer les classes qui correspondent à ce schema et ça remarche!
+
+Ebot:
+http://www.ncbi.nlm.nih.gov/Class/PowerTools/eutils/ebot/ebot.cgi
+Génère du script Perl pour une recherche donnée.
+
+Blast :
+Le logiciel qui permet de faire des recherches locales dans des séquences.
+
+blast : on crée un ondex de la base qu'on va interroger
+-dbtype : le type de bd qu'on souhaite indexer.
+-in : le nom du fichier qu'on passe en entrée.
+-> indexation : makeblastdb
+
+blastp : un blast de protéine.
+

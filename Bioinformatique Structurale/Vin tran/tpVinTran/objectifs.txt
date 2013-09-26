@@ -1,0 +1,48 @@
+Objectifs:
+
+/***************** Scéance 1: ************************/
+
+faire le tri parmi les sujets dispos...
+En choisir 1.
+p.ex natures des intéractions entre sucres et protéines...
+drug design galectines
+pistes de voies thérapeutiques : en modifiant protéine ou substrat...
+
+###################
+définition galectine :
+
+NCBI chapter 33:
+Galectins typically bind β-galactose-containing glycoconjugates 
+and share primary structural homology in their carbohydrate-recognition domains (CRDs). 
+Previously termed S-type lectins, 
+galectins represent a group of proteins that are the most widely expressed class of lectins in all organisms. 
+This chapter describes the diversity of the galectin family and presents an overview of what is known about their biosynthesis, secretion, and biological activities.
+
+It was originally described in 1975 during studies on the possible presence of lectins in the electric organs of the electric eel.
+
+
+UNIPROT :
+Fonction: 
+	May regulate apoptosis, cell proliferation and cell differentiation. 
+	Binds beta-galactoside and a wide array of complex carbohydrates. 
+	Inhibits CD45 protein phosphatase activity and therefore the dephosphorylation of Lyn kinase.
+
+Tissue expression : 
+	Expressed in placenta, maternal decidua and fetal membranes. 
+	Within placenta, expressed in trophoblasts, stromal cells, villous endothelium, syncytiotrophoblast apical membrane and villous stroma. 
+	Within fetal membranes, expressed in amnion, chorioamniotic mesenchyma and chorion (at protein level). 
+	Expressed in cardiac, smooth, and skeletal muscle, neurons, thymus, kidney and hematopoietic cells.
+
+WIKIPEDIA:
+Apoptosis:
+	can regulate cell death both intracellularly and extracellularly.
+	Extracellularly, they cross link glycans on the outside of cells and transduce signals across the membrane to directly cause cell death or activate downstream signalling that triggers apoptosis.
+	Intracellularly, they can directly regulate proteins that control cell fate (destinée cellulaire).
+	Some ways to regulate apoptosis:
+		 To control positive and negative selection of T cells in the thymus. Both galectin-1 and galectin-9 are secreted by epithelial cells in the thymus and mediate T cell apoptosis. Galectin-1 binds many proteins on the T cell surface, but specifically CD7, CD43 and CD45 are involved in apoptosis.
+		 Galectin-7 may have a key role in regulating apoptosis of keratinocytes after DNA damage, such as that caused by UV radiation.
+		 
+		 
+		 
+		 
+		 

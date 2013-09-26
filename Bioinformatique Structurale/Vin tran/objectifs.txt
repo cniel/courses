@@ -1,0 +1,135 @@
+Objectifs:
+
+/***************** Scéance 1: ************************/
+
+faire le tri parmi les sujets dispos...
+En choisir 1.
+p.ex natures des intéractions entre sucres et protéines...
+drug design galectines
+pistes de voies thérapeutiques : en modifiant protéine ou substrat...
+
+######################
+définition galectine :
+Galectins are abundant, distributed widely around the body and have some distinct functions.
+
+WIKIPEDIA:
+Apoptosis:
+	can regulate cell death both intracellularly and extracellularly.
+	Extracellularly, they cross link glycans on the outside of cells and transduce signals across the membrane to directly cause cell death or activate downstream signalling that triggers 	    apoptosis.
+	Intracellularly, they can directly regulate proteins that control cell fate (destinée cellulaire).
+	Some ways to regulate apoptosis:
+		 To control positive and negative selection of T cells in the thymus. Both galectin-1 and galectin-9 are secreted by epithelial cells in the thymus and mediate T cell apoptosis. Galectin-1 binds many proteins on the T cell surface, but specifically CD7, CD43 and CD45 are involved in apoptosis.
+		 Galectin-7 may have a key role in regulating apoptosis of keratinocytes after DNA damage, such as that caused by UV radiation.
+		 Galectin-12 expression induces apoptosis of adipocytes.
+		 Galectin-3 has been shown to be the only galectin with anti-apoptotic activity. Intracellulary, can associate with Bcl-2 proteins : anti-apoptotic family, and thus may enhance Bcl-2 binding to the target cell.
+		 Galectin-3 can also be pro-apoptotic and mediate T cell and neutrophil death.
+		 
+Suppression of T-cell receptor activation :
+	Essential role in negatively regulating T cell receptor (TCR) activation.
+	Galectins have been proven to act as chemoattractants to immune cells and activate secretion of inflammatory cytokines.
+		 
+Adhesion :
+	Can both promote and inhibit integrin-mediated adhesion.
+	Enhancement : they cross link between two glycans on different cells. This brings the cells closer together so integrin binding occurs.
+	Inibition   : by binding to two glycans on the same cell, which blocks the integrin binding site.
+
+Nuclear pre-miRNA splicing :
+	Galectin-1 and galectin-3 : associate with nuclear ribonucleoprotein complexes including the spliceosome. They are required splicing factors.
+	It appears that the splicing capability of galectins is independent of their sugar-binding specificities.
+	
+Implication in Cancers :
+	Galectin-3 : 
+		Best understood galectin in cancers.
+		A considerable part in processes linked to tumorigenesis.
+		It interacts with oncogenes such as Ras and activates downstream signalling that promotes proliferation.
+		Can also regulate some of the proteins of the cell cycle, such as cyclin E and c-myc, which may give it additional tumorigenic properties.
+		Bound to glycans on the surface of breast cancer cells.
+		Also binds to MUC-1, a very large transmembrane mucin, which on cancer cells changes expression from long core 2 type O-glycosylation to shorter core 1 type O-glycosylation.
+		Other studies showing that inhibition of galectin-3 in human breast cancer cells lose their malignancy in vitro. --> This may provide a clue towards developing therapeutics for cancer, such as galactin-3 inhibitors.
+		
+Implication in HIV :
+	Galectin-1 : enhance HIV infection due to its galactose binding specificity.
+	HIV is a virus that infects CD4+ cells via binding of its viral envelope glycoprotein complex, which consists of gp120 and gp41.
+	The gp120 glycoprotein contains two types of N-glycan, high mannose oligomers and N-acetyllactosamine chains on a trimannose core.
+	The N-acetyllactosamine chains are ligands for galectin-1 (expressed in the thymus).
+	In its normal function, galectin-1 binds to glycans on the CD4 co-receptor of T cells to prevent auto reactivity.
+	When HIV is present, the galectin bridges between the CD4 co-receptor and gp120 ligands, thus facilitating HIV infection of the T cell.
+	A galectin-1 inhibitor can be used in conjunction with antiretroviral drugs to decrease the infectivity of the HIV and increase the efficacy of the drug.
+		
+		
+	
+NCBI chapter 33:
+Voir les 2 .ppt téléchargés.
+Galectins typically bind β-galactose-containing glycoconjugates 
+and share primary structural homology in their carbohydrate-recognition domains (CRDs). 
+Previously termed S-type lectins, 
+galectins represent a group of proteins that are the most widely expressed class of lectins in all organisms. 
+This chapter describes the diversity of the galectin family and presents an overview of what is known about their biosynthesis, secretion, and biological activities.
+
+It was originally described in 1975 during studies on the possible presence of lectins in the electric organs of the electric eel.
+
+
+UNIPROT :
+Fonction: 
+	May regulate apoptosis, cell proliferation and cell differentiation. 
+	Binds beta-galactoside and a wide array of complex carbohydrates. 
+	Inhibits CD45 protein phosphatase activity and therefore the dephosphorylation of Lyn kinase.
+
+Tissue expression : 
+	Expressed in placenta, maternal decidua and fetal membranes. 
+	Within placenta, expressed in trophoblasts, stromal cells, villous endothelium, syncytiotrophoblast apical membrane and villous stroma. 
+	Within fetal membranes, expressed in amnion, chorioamniotic mesenchyma and chorion (at protein level). 
+	Expressed in cardiac, smooth, and skeletal muscle, neurons, thymus, kidney and hematopoietic cells.
+
+
+	
+POINT VIN TRAN:
+Les prot associées aux sucres: lectines. les galectins sont une sous-catégorie : en relation avec des beta-galactosides.
+Prolifération de maladies suivant la nature de la maladie --> galectin sont sur-exprimées, et favorisent la maladie, notamment la prolifération
+Molécule naturelle -> ne pas l'éradiquer. mais des contextes font que le mécanisme déraille.
+En terme médical : détéction de ces galectin en signe pronostique de maladies --> Coté diagnostic. 
+Si on arrive à diminuer le taux de ces protéines de façon artificielle, alors la maladie ne progresse pas aussi vite (dur a faire dans l'organisme humain : on peut pas en empecher sa sécretion). -> trouver des inibiteur de la fixation des ces galactin avec leurs lignads naturelles. -> plus d'activité indésirable.
+
+Plusieurs types de galectins, essayer de trouver des inibiteurs spécifiques de ces galectins, avec des spécifités encore plus forte que le ligand naturel.
+Panoplie d'inhibiteurs, les tester in silico. Puis synthétisation par des biologistes...
+Savoir si ttes les galectines ont les memes sites catalytiques. On pourrait donc faire des inhibiteurs génériques ou spécifiques de ces galectins.
+-> comparaison des galectins.
+Inhibiteur : énergie qu'il ya derrière : c'est le maitre mot en modelisation moléculaire.
+A chaque fois qu'il y a un ligand avec un prot, on cherche la nature des intéraction (hydrophobes,...). -> Identifier les forces de l'intéraction.
+Identifier des molécules qui peuvent rentrer dans le site de fixation.
+
+Y a t-il de la place pour mettre autre chose. Quel type de molécule va-t-il falloir modifier pour qu'elle puisse perturber le mécanisme naturel.
+
+Ressemblances entre galectin 1 et 3 ?
+3 et 7 ?
+Articles donnent des molécules suspectées d'avoir une affinité pour ces galectins...
+
+OBJECTIFS :
+--> Un projet binome se restreint à une de ces pbmtiques :
+Trouver la bonne molécule qui rentre.
+Vérifier que cette molécule a + d'affinité.
+Modifier cette molécule pour trouver LE BON médicament.
+
+Est-ce que les sites de galactosidases ressemblent à ceux des galectins.
+
+
+SUJET 1:
+Galectin 3 semble la plus documentée.
+Comparer la 1 et la  3 (aa impliqués dans le binding...).
+Trouver un ligand pour la 3. (etat des lieux).
+Faire du drug diseign sur ce ligang pour le pied-de-bicher dans la 1 -> repress HIV. ("A galectin-1 inhibitor can be used in conjunction with antiretroviral drugs to decrease the infectivity of the HIV and increase the efficacy of the drug.")
+
+
+Biblio:
+Où la g.1 est elle impliquée?
+Etat des lieux ligand g1 et g3.
+Idem structures 3D.
+Intéraction HIV-g1-Tcell.
+
+SUJET 2:
+Protéine de fusion entre ligand galectin et un activateur de la protéolise extra ou intra (?).
+
+Biblio :
+
+SUJET 3:
+
