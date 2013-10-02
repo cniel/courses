@@ -1,10 +1,12 @@
 void initMat(TMatr* adr_mat, int nbMaxRows, int nbMaxCols, double valDef);
 
+TPRow allouerMemoire();
+TPCol allouerMeuuuhmoire();
+
 void creation_case_affectation1(TMatr* adr_mat, TPRow* adr_p_prec, int i, int j, double val);
 void creation_case_affectation2(TPRow* adr_ptr_lig_i, TPCol* adr_p_j_prec, int j, double val){
 
 void recherche_col(TPCol headCols, TPCol* adr_Col, TPCol* adr_ColPrec);
-
 
 void recherche(TMatr mat, int i, int j, TPRow* adr_Row, TPRow* adr_RowPrec, TPCol* adr_Col, TPCol* adr_ColPrec);
 /*postCondition:
@@ -17,7 +19,6 @@ si *adr_pCol != NULL  :  la colonne j est présente.
 si *adr_pRowPrec != NULL : valeur particulière.
 si *adr_pColPrec != NULL : valeur particulière.
 */
-
 
 void set(TMatr* adr_mat, int i, int j, double val); //mat[i][j] = val;
 
@@ -38,5 +39,3 @@ ANALYSE de la fonction set:
 	
 C'est pas de la bonne prog d'avoir une fonction qui fasse un return ET qui ait des paramètres par adresse.
 */
-
-
