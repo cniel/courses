@@ -1,0 +1,58 @@
+projet génome humain:
+1er papier 2001.
+2e: un chercheur américain qui faisait partie du projet qui a séquencé son génome "tt seul".
+
+c'est pas un seul génome mais une mosaique de génomes qui ont été séquencé. (a part dans le 2e cas).
+les génomes sont pas identiques. Il y avait bcp + de variabilités entre individus que ce qu'on pensait.
+
+HapMap : catalogue de variations SNP : programme démarré en 2003.
+
+variation structurale : tout ce qui va toucher a une région chromosomique + ou - grande. (1Kb ou plus) :
+	deletion, insertion, mobile elemnt : retro-transposition (notamment ds l'activité virale)   :  celles sur les quelles on travaillait le plus au début.
+	duplication du segment (en tandem ou plus éloignées)
+	inversion d'un segment par rapport à une référence : diff structurale : les séquences entre elles ne sont pas organisées pareil.
+
+co-hybridation d'ADNs sur lame -> scan : ration de fluorescence : test // référence.
+
+2003:
+puce composée de 3500 positions d'hybridation : maillage du génome pour localiser des variations par rapport à une référence.
+qd on compare 2 indivs sur cette puce : on voit p.ex des régions délétées //t à la reférence.
+comment déterminer ces régions "anormales" //t à la reférence?
+
+en travaillant sur la puce de 3000 clones.
+
+enfant malade : on fait un caryotipe -> si anormal : on fait un diagnotic... - résolution très faible.
+avec cette technologie : on voulait la tester pour voir si elles étaient efficaces pour detecter des deletions et des duplications.
+
+il y a des grandes parties du génome qui peuvent deletées ou dupliquées et qui sont pas forcément associées à des maladies.
+
+patient1:
+	déletion à l'extrémité du chrm1. (très difficile à détecter au cariotype).
+	avec cette puce, on a réalisé une résolution très forte sur le chrm 1.
+	chez un patient normal : on ne retrouve pas de déletion dans cette position, mais un petit peu décalé, il peut y en avoir, meme des bcp plus grandes.
+	-> il y a ptet en début de chms des 
+	
+Chez deux autres patient ac un phénotype particulier, on retrouve une délétion (de novo) très similaire. Ces 2 enfants n'ont pas de lien de parenté.
+
+Aujourd'hui, en cas de retard mental, etc, on teste les enfants ave des puces (pas forcément les mm) pour essayer de trouver des variations comme ça.
+
+en 98, genomic disorder décrit: les délétion/duplic. observées, elles sont parfois récurrents, et un mécanisme peut expliquer cette récurrente:
+	recombinaison homologue non-allélique.
+	entre 2 chms : soit deletion, soit duplication apparait.
+	si les deux segments sont inversés, on peut aussi avoir une inversion.
+Daltonisme : phénotype associé à une délétion sur le chms X lié à ce type de mécanisme.
+Ce mécanisme -> une certaine récurrence de la maladie.
+
+région sur le cmhs 17. : 2 hplotypes en europe : le "normal" et l'inversé : le H2. Avec le H2, il y a un risque de recombinaison homologue non-allélique.
+
+autisme : maladie très hétérogène en génétisme, c'est complexe, mais on pense que la composante génétique est forte.
+on cherche des deletions, duplications de novo chez l'enfant. -> ça a  été montré que ces mutations sont impliquées.
+-> approche plus globale : on regarde sur une gde pop si on a un enrichissmt en mutations de novo. puis on ragerde s'il y en a dans des voies précises.
+-> c'est une autre approche que travailler sur l'identification d'un gène précis.
+
+
+on s'intéresse indivi. par indiv à tous les clones
+ou clone par clone pour tous les individus.
+
+
+
