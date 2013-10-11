@@ -1,0 +1,30 @@
+ETUDE D'ASSOCIATION PANGÉNOMIQUES
+
+Transmission d'un allèle ancien.
+	Zone délétère transmise avec une portion d'adn (génome cohérité avec cette mutation, dont la taille est plus ou moins grande). 
+	Mutation ancienne : bcp de d'évenements de méioses -> segments petits.
+	Analyse de liaison familiale : limites: pas précis pour localiser la mutation. Avantage : Il faut peu de marqueurs (mais on s'en fou pq ça coute peu cher).
+	
+Common Variant Common Disease:
+	Extension rapide de la pop humaine : des variants rares peuvent devenir très communs (meme s'ils causent la maladie (et donc sont selectionnés négativement)).
+	Si jamais ils sont vraiment très graves, ils auraient été contre-selectionnés qd meme.
+	Variants fréquents avec des effets rares.
+	
+Historique
+	Pour des allèles relativement fréquents: on avait plein de familles (petites), et on assemblait les données pour essayer de trouver des allèles communs. Mais ça n'a pas bien marché.
+	Hypothèses CD/CV (common disease / common variant):
+		On prend des exemples précis d'allèles fréquents ds la pop, qui ont un effet assez fort (pour etre detecté en liaison). Pour ce type d'allèle, qques centaines d'indiv auraient suffit.
+		Architecture la plus probable : effets épistatique. Si les effets sont épistatiques, alors il faut que chaque allèle soit fréquant dans la population. 
+		Il faut donc que ces variants soient fréquents.
+		
+	Conclusions
+	
+Structure du génome au secours des EAP : diversité haplotypique réduite.
+	génome divisé en blocs de déséquilibre de liaison.
+	
+
+l'héritabilité
+
+
+les méta-analyses : pour le powa.
+

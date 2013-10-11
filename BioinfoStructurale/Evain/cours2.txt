@@ -1,0 +1,157 @@
+(cours1 sur feuille)
+
+27/09
+Réseau direct
+On peut aussi construire un réseau réciproque:
+	on prend la perpendiculaire à chaque famille de plan, et on place un noeud tel que la distance jusqu'au noeud est inversement proportionnelle à la distance entre 2 plans de cette famille.
+	
+Meme principe ici:
+	a partir du centre du cristal, l'origine du réseau direct, on déssine une sphere de rayon 1/lambda.
+	a partir de cette sphere on dessine le réseau réciproque:
+		l'origine du réseau réciproque est sur la périphérie de la sphère.
+		qd le réseau direct tourne, le réciproque aussi, dans les memes directions.
+		on sera en condition de diffraction quand un noeud arrive sur la sphere -> on peut en déduire la direction de diffraction en fction de la position du noeud.
+		
+		2 * 1/lambda *sin(teta) = 1/d  
+		
+		2 * 1/lambda *sin(teta) : la distance entre l'origine et le noeud qu'on a amené en condition de diffraction.
+		1/d : (inverse de la distance entre les plans du réseau direct)
+		
+		pour qu'on noeud puisse rencontrer la sphere:
+			il faut qu'il soit dans la sphere avec l'origine qu'on a redéfinit et dont le rayon est égal au diamètre de la sphere du réseau réciproque.
+		si vraiment on veut détecter la direction de diffraction d'un noeud qui est + loin:
+			il faut agrandir le rayon, donc diminuer la longueur d'onde.
+		
+Détermination des paramètres de maille:
+	On arrive à trouver les paramètre du réseau réciproque -> on en déduit les param du réseau direct.
+
+Production des rayons X:
+	dans une enceinte circulaire sous vide (ultra-vide), on a :
+		un filament ds lequel on fait passer un courant électrique :
+		une pièce métallique.
+		on applique entre cathode et anode un courant.
+		des électrons sont arrachés au filament et vont bombarder la pièce métallique:
+			celle-ci chauffe, on est obligé de la refroidir en permanence.
+			s'il y a une panne ds la circulation d'eau, le tube est cramé en qques secondes.
+			deux choses se passent:
+				1/la pièce métallique, c'est essentiellement composé d'atomes:
+					l'électron arrive dessus et s'entrechoque contre bcp d'atomes. à chque choc, il perd de l'energie. (petites longueurs d'ondes -> grande énergie).
+					on ne sait pas à l'avance quelle va être la valeur de cette energie.
+				2/il y a des niveaux atomiques, sur chaque niveau, il y des electrons. En bombardant une pièce métallique, on va aussi aracher un électron et il sort du matériaux:
+					quand il y a un trou sur un niveau, un electron du niveau d'au dessus le remplace.
+					on contrôle donc les longueurs d'ondes émise car elles dépendent du métal qu'on utilise.
+					plusieurs sont émises mais avec une fente très petite, on arrive à isoler une longueur d'onde particulière.
+
+On cherche à ce que la source soit la plus intense possible:
+	il suffit de bombarder avec plus de photons.
+	mais on est limité à cause du refroidissement.
+
+Dans le tube du synchotron, on fait tourner des particules chargées.
+Quand elles changent de direction, elles rayonnent à différentes longueur d'onde, dont les rayonx X (c'est pas vraiement un anneau mais plein de petites lignes droites avec des angles).
+
+Partir des rayons diffracté et remonter à la position des atomes:
+	Exemple:
+	cristal à 1 dimension : 1 rangée d'atomes:
+		2 atomes de carbones, 1 de fluore, 2C, 1F, ...
+		plus d'e- pour le fluore que pour le C (c'est pour ça qu'il est un peu plu haut sur le graphe).
+		-> on mesure donc un signal périodique (2 pics de C puis 1 de F).
+		Le but du jeu:
+			Trouver cette fonction comme étant une somme de fonction périodiques bcp plus simples (sin, cos,...)
+			on peut jouer sur l'amplitude, la fréquence et la phase.
+			fréquence 2 : on a deux période sur une maille.
+			on y ajoute un terme de fréquence 3: il y a un pic qui s'agrandit (ajout des deux fréq), un autre est corrigé, et un autre apparait.
+			puis on rajoute fréquence 5: on arrive presque à ce qu'on veut.
+			On peut encore en prendre une infinité -> on s'arrete dès que c'est suffisamment proche de ce qu'on veut.
+		->La fonction est une somme de fonctions cosinus, liées à h (de (h,k,l), et la phase alpha), et ceci lié à la fréquence.
+		Toute fonction périodique peut être approximée par une série de Fourier.
+		Nous on connait pas les F et les alpha. mais on connait x. -> il faut inverser l'équation, et c'est là qu'intervient l'intégrale.
+		
+		f(x) = F.cos2pi(hx+alpha)  ==  f(x) = cos2pi(hx) + i.sin2pi(hx) (la phase dépend alors de h et de x) (nombre complexe)
+		
+		on peut donc utiliser la notation exponentielle :
+		f(x) = Somme_h(F_h.exp(2pi.i(hx)))
+		
+		h: fréquence (dans l'espace réciproque)
+		F: amplitude
+		x: position dans l'espace (sans dimension, dans l'espace direct)
+		
+		on travaille sur trois dimensions, donc c'est une intégrale à 3 dimensions. (voir formules poly)
+		
+		dans la fonction f, il y a:
+			le module : l'aplitude
+			la phase : l'angle du vecteur dans l'espace complexe.
+		
+
+04/09
+
+F(h,k,l)
+les directions dans l'espace, le module (la fréquence), l'angle (l'argument -> la phase)
+
+Intensité diffractée
+	r : un vecteur de l'espace physique.
+	s : un vecteur de l'espace réciproque (dit "espace des phases)"
+	f : le facteur de forme atomique. c'sst en unités d'électrons (plus il y a d'e-, plus le facteur est grand). Chaque atome a son facteur de forme spécifique (un peu comme une signature).
+	rho : densité electronique.
+
+	espace réciproque : infos sur amplitude, fréquence, et une phase
+	
+	Représentation de la fréquence:
+		C'est là où est positionnée l'origine de la tache.
+	
+	Représentation de l'amplitude:
+		Le module du vecteur.
+		C'est une intensité -> c'est l'intensité de la couleur.
+		
+	Représentation de la phase:
+		L'angle du vecteur.
+		Ça va de 0 à 2pi. elle est traduite par un jeu de couleur : rouge : la phase est nulle, etc.
+		
+	Tout ce qui est petit dans l'espace direct devient grand dans l'espace reciproque.
+	
+	Pour n atomes:
+		la somme des densités électroniques -> C'est l'intégrale sur la maille.
+		la somme des transformées de fourrier
+		chaque point est repéré par h,k,l (réels)
+		On observe un phénomène de diffusion (continu).
+		
+		
+	Structure : F
+	Facteur de forme atomique : f
+	
+	Pour un cristal:
+		C'est pas continue à avant : on repère des choses qu'à certains points de l'espace : à chaque valeur de h,k,l réelle.
+		On voit que c'est un réseau qui est formé.
+		On peut faire un calcul de transormé de fourrier d'un réseau -> ça donne aussi un réseau.
+		
+		La distance entre deux ploints dans le réciproque est inversement proportionnelle à la distance inter-réticulaire du réseau direct.
+		On observe un phénomène de diffraction (discret).		
+		
+		Transformée de fourrier d'un cristal : c'est la transformée du motif répété, que multiplie la transformée du réseau. On peut obtenir ces ceux dernières séparement.
+		Pbm : on a pas les infos sur les phases -> il faut passer par autre chose.
+		
+L'intensité diffractée et loi de Friedel:
+	intensité diffractée par hkl est la meme que l'intensité diffractée par h_barre, k_b, l_b. (C'est la meme famille de plan, c'est juste qu'on regarde d'un coté ou de l'autre de l'origine).
+
+Pour chaque triplet h,k,l, à chaque fois que h + k = nombre_impair -> l'intensité est nulle. (voir la somme en p.22 du poly)	
+		
+Sur les tableaux de mesures d'intensité:
+	Est-ce que 0 appartient à [ I + 3*ecartType(I) ; I - 3*ecartType(I) ] ?
+		Si oui, l'instensité mesurée n'est pas signifiactive -> 0.
+	
+	
+Chat -> moulinette fourrier -> machin tout éclaté. On peut aussi faire la transformation inverse.
+Canard-> __________________________________________________________________
+
+Si on superpose les phases du chat et l'amplitude du canard -> quand on retourne vers l'espace direct, on retrouve un chat (bruité).
+-> c'est donc la phase qui est l'info prépondérante. Pas de chance, c'est l'info qu'on ne mesure pas.
+
+
+MÉTHODE DE L'ATOME LOURD:
+	protéine: on prépare un autre cristal, avec la mm prot, ds la mm config, mais en présence d'un atome lourd (plomb, mercure, lourd). On veut que ça se rajoute sans perturber la prot (ou le moins possible).
+	Comme l'intensité diffractée dépend du nb d'e- (elle est importante pour des atomes lourds).
+	Elle dépend aussi de la position : plus l'atome est proche d'un plan réticulaire, plus la contribution est importante.
+
+	Un cristal avec le prot tte seule P. on fait un premier record.
+	on fait un 2e record sur la prot + atome lourd (en esperant que la prot ait la mm config).
+	
+	facteur de struct pour atome lourd = fact structur_ prot+lourd - fact struct_prot
