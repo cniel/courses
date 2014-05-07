@@ -1,3 +1,6 @@
+Algorithme récursif du calcul de factorielle.
+
+```
 FONCTION fact((e)i:entier)
 debut
 	si(i == 0) alors
@@ -6,3 +9,4 @@ debut
 		retourner(fact(i-1)*i)
 	finsi
 fin
+```
